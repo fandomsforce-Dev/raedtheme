@@ -1,9 +1,9 @@
 {
     "name": {
-        "ar": "رائد",
+        "ar": "فخر",
         "en": "Theme Raed"
     },
-    "repository": "https://github.com/SallaApp/theme-raed",
+    "repository": "https://github.com/fandomsforce-Dev/raedtheme",
     "author_email": "support@salla.sa",
     "features": [
         "mega-menu",
@@ -29,7 +29,7 @@
             "id": "squar_photo_bg_image_size",
             "type": "items",
             "format": "dropdown-list",
-            "label": "طريقة عرض الصور في قسم قائمة عناصر ",
+            "label": "طريقة عرض الصور في قسم قائمة عناصر",
             "description": null,
             "labelHTML": null,
             "icon": "sicon-list",
@@ -64,7 +64,7 @@
             "format": "switch",
             "required": false,
             "value": false,
-            "selected": false
+            "selected": true
         },
         {
             "type": "boolean",
@@ -81,7 +81,7 @@
             "type": "static",
             "format": "title",
             "id": "static-label2",
-            "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات أعلى الصفحة</h6></div>",
+            "value": "<div class='rounded-lg' ><h6 > خيارات أعلى الصفحة</h6></div>",
             "variant": "h6"
         },
         {
@@ -126,7 +126,8 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
+            "selected": true,
+            "public": true
         },
         {
             "type": "static",
@@ -137,7 +138,7 @@
             "type": "static",
             "format": "title",
             "id": "static-label4",
-            "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات أسفل الصفحة</h6></div>",
+            "value": "<div class='rounded-lg' ><h6 > خيارات أسفل الصفحة</h6></div>",
             "variant": "h6"
         },
         {
@@ -160,7 +161,7 @@
             "type": "static",
             "format": "title",
             "id": "static-label6",
-            "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات صفحة المنتج</h6></div>",
+            "value": "<div class='rounded-lg' ><h6 > خيارات صفحة المنتج</h6></div>",
             "variant": "h6"
         },
         {
@@ -1088,6 +1089,16 @@
                     "maxLength": 30
                 }
             ]
+        },
+        {
+            "key": "64ad76d8-3e6b-4081-b4ca-8218d97316c2",
+            "title": {
+                "en": "قسم المنتجات التجريبي",
+                "ar": "قسم المنتجات التجريبي"
+            },
+            "icon": "sicon-store",
+            "path": "home.featured-products-copy-test",
+            "fields": []
         }
     ],
     "support_url": "https://salla.com/",
