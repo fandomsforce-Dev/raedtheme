@@ -241,7 +241,6 @@
     ],
     "components": [
         {
-            
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
             "title": {
                 "en": "Enhances Animated Images",
@@ -1088,7 +1087,7 @@
                 "ar": "قسم المنتجات التجريبي"
             },
             "icon": "sicon-store",
-            "path": "home.featured-products-copy-test",
+            "path": "home.enhanced-slidercopy",
             "fields": []
         }
     ],
