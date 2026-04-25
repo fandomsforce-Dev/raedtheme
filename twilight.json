@@ -241,7 +241,6 @@
     ],
     "components": [
         {
-            
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
             "title": {
                 "en": "Enhances Animated Images",
@@ -1088,10 +1087,15 @@
                 "ar": "قسم المنتجات التجريبي"
             },
             "icon": "sicon-store",
+<<<<<<< HEAD
             "path": "home.featured-products-copy-test",
             "fields": [
                 
             ]
+=======
+            "path": "home.enhanced-slidercopy",
+            "fields": []
+>>>>>>> 2f502ef64b7e26d0be2e0c4b8df0605747dd821a
         }
     ],
     "support_url": "https://salla.com/",
