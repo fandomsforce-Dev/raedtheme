@@ -1084,12 +1084,14 @@
         {
             "key": "64ad76d8-3e6b-4081-b4ca-8218d97316c2",
             "title": {
-                "en": "قسم المنتجات التجريبي",
+                "en": "test-secion",
                 "ar": "قسم المنتجات التجريبي"
             },
             "icon": "sicon-store",
             "path": "home.featured-products-copy-test",
-            "fields": []
+            "fields": [
+                
+            ]
         }
     ],
     "support_url": "https://salla.com/",
