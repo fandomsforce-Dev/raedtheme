@@ -241,15 +241,6 @@
     ],
     "components": [
         {
-      "key": "my-test-section-123",
-      "title": {
-        "en": "Test Section",
-        "ar": "قسم المنتجات التجريبي"
-      },
-      "icon": "sicon-Layout",
-      "path": "home.featured-products-copy-test"
-    },
-        {
             
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
             "title": {
