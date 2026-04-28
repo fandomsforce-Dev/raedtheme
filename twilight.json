@@ -1109,7 +1109,7 @@
                     "id": "image_0000",
                     "type": "string",
                     "format": "image",
-                    "label": "Image_1111",
+                    "label": "صوره",
                     "description": "يمكن",
                     "labelHTML": "اضف صوره",
                     "placeholder": "e.g. https://hostname.com/image.png",
@@ -1126,9 +1126,9 @@
                     "description": null,
                     "labelHTML": null,
                     "icon": "sicon-user-circle",
-                    "value": "sicon-store",
-                    "required": false,
-                    "public": true
+                    "value": "sicon-checklist",
+                    "required": true,
+                    "public": false
                 },
                 {
                     "id": "time",
