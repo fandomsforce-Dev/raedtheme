@@ -233,6 +233,102 @@ isElementLoaded(selector){
     }
   }
 
+  /**
+   * Open quick view modal for product
+   */
+  openQuickView(productId, productUrl) {
+    // Create modal if not exists
+    let modalId = 'quick-view-modal';
+    let modal = document.getElementById(modalId);
+    
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = modalId;
+      modal.className = 'hidden fixed inset-0 z-50 overflow-y-auto';
+      modal.innerHTML = `
+        <div class="flex items-center justify-center min-h-screen px-4">
+          <div class="s-salla-modal-overlay fixed inset-0 bg-black bg-opacity-50 transition-opacity" data-close-modal="${modalId}"></div>
+          <div class="s-salla-modal-body bg-white rounded-lg shadow-xl max-w-4xl w-full mx-auto relative z-10 transform transition-all">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600" data-close-modal="${modalId}">
+              <i class="sicon-close text-xl"></i>
+            </button>
+            <div id="quick-view-content" class="p-6">
+              <div class="flex items-center justify-center py-12">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      
+      // Bind close events
+      modal.querySelectorAll('[data-close-modal]').forEach(btn => {
+        btn.addEventListener('click', () => this.toggleModal(`#${modalId}`, false));
+      });
+    }
+
+    // Show modal
+    this.removeClass(`#${modalId}`, 'hidden');
+    setTimeout(() => this.toggleModal(`#${modalId}`, true), 10);
+
+    // Load product content
+    const contentDiv = document.getElementById('quick-view-content');
+    contentDiv.innerHTML = `
+      <div class="flex items-center justify-center py-12">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+      </div>
+    `;
+
+    // Fetch product data
+    fetch(`${productUrl}?quickview=1`)
+      .then(res => res.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const productDetails = doc.querySelector('.product-single') || doc.querySelector('#product-details');
+        
+        if (productDetails) {
+          contentDiv.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="product-image">
+                ${doc.querySelector('.product-single__image img, .image-slider img')?.outerHTML || ''}
+              </div>
+              <div class="product-info">
+                <h2 class="text-2xl font-bold mb-2">${doc.querySelector('h1')?.textContent || ''}</h2>
+                <div class="text-3xl font-bold text-red-800 mb-4">
+                  ${doc.querySelector('.total-price, .price-wrapper')?.textContent || ''}
+                </div>
+                <div class="mb-4">
+                  ${doc.querySelector('.product-form')?.outerHTML || 
+                    `<salla-add-product-button product-id="${productId}" width="wide" fill="solid">أضف للسلة</salla-add-product-button>`}
+                </div>
+                <a href="${productUrl}" class="text-blue-600 hover:underline">عرض التفاصيل الكاملة →</a>
+              </div>
+            </div>
+          `;
+        } else {
+          contentDiv.innerHTML = `
+            <div class="text-center py-8">
+              <p class="text-gray-600 mb-4">تم جلب بيانات المنتج</p>
+              <salla-add-product-button product-id="${productId}" width="wide" fill="solid">أضف للسلة</salla-add-product-button>
+              <div class="mt-4">
+                <a href="${productUrl}" class="text-blue-600 hover:underline">عرض صفحة المنتج الكاملة →</a>
+              </div>
+            </div>
+          `;
+        }
+      })
+      .catch(() => {
+        contentDiv.innerHTML = `
+          <div class="text-center py-8">
+            <p class="text-red-500 mb-4">حدث خطأ في تحميل المنتج</p>
+            <a href="${productUrl}" class="text-blue-600 hover:underline">انتقل لصفحة المنتج →</a>
+          </div>
+        `;
+      });
+  }
+
   initiateCollapse() {
     document.querySelectorAll('.btn--collapse')
       .forEach((trigger) => {

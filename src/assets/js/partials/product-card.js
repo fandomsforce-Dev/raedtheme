@@ -211,6 +211,20 @@ class ProductCard extends HTMLElement {
               onclick="salla.wishlist.toggle(${this.product.id})"
               data-id="${this.product.id}">
               <i class="sicon-heart"></i>
+            </salla-button>
+            <salla-button 
+              shape="icon" 
+              color="light"
+              class="s-product-card-quick-view-btn"
+              onclick="app.openQuickView(${this.product.id}, '${this.product?.url}')">
+              <i class="sicon-eye"></i>
+            </salla-button>
+            <salla-button 
+              shape="icon" 
+              color="light"
+              class="s-product-card-share-btn"
+              onclick="navigator.share({title: '${this.product.name}', url: '${this.product?.url}'}, ${this.product.id})">
+              <i class="sicon-share"></i>
             </salla-button>` : ``
           }
         </div>
@@ -273,14 +287,14 @@ class ProductCard extends HTMLElement {
 
           ${!this.hideAddBtn ?
             `<div class="s-product-card-content-footer gap-2">
-              <salla-add-product-button fill="outline" width="wide"
+              <salla-add-product-button fill="solid" width="wide"
                 product-id="${this.product.id}"
                 product-status="${this.product.status}"
                 product-type="${this.product.type}">
                 ${this.product.status == 'sale' ? 
                     `<i class="text-base sicon-${ this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
                   }
-                <span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel() }</span>
+                <span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
               </salla-add-product-button>
 
               ${this.horizontal || this.fullImage ?
@@ -294,6 +308,18 @@ class ProductCard extends HTMLElement {
                   onclick="salla.wishlist.toggle(${this.product.id})"
                   data-id="${this.product.id}">
                   <i class="sicon-heart"></i> 
+                </salla-button>
+                <salla-button 
+                  shape="icon" 
+                  color="light"
+                  onclick="app.openQuickView(${this.product.id}, '${this.product?.url}')">
+                  <i class="sicon-eye"></i>
+                </salla-button>
+                <salla-button 
+                  shape="icon" 
+                  color="light"
+                  onclick="navigator.share({title: '${this.product.name}', url: '${this.product?.url}'}, ${this.product.id})">
+                  <i class="sicon-share"></i>
                 </salla-button>`
                 : ``}
             </div>`

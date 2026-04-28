@@ -130,6 +130,7 @@
       &__quantity,
       salla-add-product-button{
         @apply translate-y-5 opacity-0 transition duration-700 ease-elastic w-full;
+        
       }
 
       &__price,
@@ -289,8 +290,52 @@
   }
 }
 
-.s-product-card-minimal salla-button.s-product-card-wishlist-btn{
+salla-button.s-product-card-wishlist-btn{
   @apply rtl:left-2.5 ltr:right-2.5 top-2.5;
+}
+
+// Quick view button styling
+salla-button.s-product-card-quick-view-btn{
+  @apply absolute rtl:right-2.5 ltr:left-2.5 top-2.5 z-10;
+  @apply bg-white/90 backdrop-blur-sm rounded-full;
+  @apply w-9 h-9 flex items-center justify-center;
+  @apply shadow-md transition-all duration-300;
+  @apply opacity-0 translate-y-2;
+
+  &:hover{
+    @apply bg-white scale-110 shadow-lg;
+  }
+
+  i{
+    @apply text-gray-600 text-sm;
+  }
+}
+
+// Share button styling - بجانب زر العرض السريع بشكل عمودي
+salla-button.s-product-card-share-btn{
+  @apply absolute rtl:right-2.5 ltr:left-2.5 top-14 z-10;
+  @apply bg-white/90 backdrop-blur-sm rounded-full;
+  @apply w-9 h-9 flex items-center justify-center;
+  @apply shadow-md transition-all duration-300;
+  @apply opacity-0 translate-y-2;
+
+  &:hover{
+    @apply bg-white scale-110 shadow-lg;
+  }
+
+  i{
+    @apply text-gray-600 text-sm;
+  }
+}
+
+// Show quick view on card hover
+.s-product-card-entry:hover salla-button.s-product-card-quick-view-btn{
+  @apply opacity-100 translate-y-0;
+}
+
+// Show share button on card hover
+.s-product-card-entry:hover salla-button.s-product-card-share-btn{
+  @apply opacity-100 translate-y-0;
 }
 
 // image zooming
