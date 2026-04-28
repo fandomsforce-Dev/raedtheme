@@ -352,7 +352,6 @@
             },
             "icon": "sicon-layout-grid-rearrange",
             "path": "home.main-links",
-            "image": "https://cdn.salla.network/images/themes/raed/main-links-with-bg.jpg?v=1.1",
             "fields": [
                 {
                     "type": "static",
@@ -403,7 +402,7 @@
                     "format": "switch",
                     "required": false,
                     "value": false,
-                    "selected": false
+                    "selected": true
                 },
                 {
                     "type": "static",
@@ -431,7 +430,7 @@
                     "format": "switch",
                     "required": false,
                     "value": false,
-                    "selected": false
+                    "selected": true
                 },
                 {
                     "id": "categories",
@@ -452,7 +451,8 @@
                             "operation": "=",
                             "value": true
                         }
-                    ]
+                    ],
+                    "value": []
                 },
                 {
                     "id": "links",
@@ -529,7 +529,7 @@
                             "icon": "sicon-link",
                             "label": "الرابط",
                             "id": "links.url",
-                            "value": null,
+                            "value": [],
                             "description": null,
                             "required": false,
                             "format": "variable-list",
