@@ -1089,7 +1089,52 @@
             },
             "icon": "sicon-store",
             "path": "home.enhanced-slidercopy",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "static",
+                    "format": "title",
+                    "label": "Title",
+                    "value": null,
+                    "variant": "h1",
+                    "icon": "sicon-format-text"
+                },
+                {
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": "يمكن",
+                    "labelHTML": "اضف صوره",
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": true
+                },
+                {
+                    "id": "icon_picker",
+                    "type": "string",
+                    "format": "icon",
+                    "label": "Icon Picker",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-user-circle",
+                    "value": "sicon-store",
+                    "required": false
+                },
+                {
+                    "id": "time",
+                    "type": "string",
+                    "format": "time",
+                    "inputType": "time",
+                    "label": "Time",
+                    "description": null,
+                    "labelHTML": "تجريبي اتش ام ال",
+                    "icon": "sicon-time",
+                    "value": "01:00",
+                    "required": false
+                }
+            ]
         }
     ],
     "support_url": "https://salla.com/",
