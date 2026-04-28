@@ -747,7 +747,6 @@
             },
             "icon": "sicon-image",
             "path": "home.enhanced-square-banners",
-            "image": "https://cdn.salla.network/images/themes/raed/preview-images/square-images.png?v=1.1",
             "fields": [
                 {
                     "type": "static",
@@ -759,7 +758,7 @@
                     "type": "static",
                     "format": "description",
                     "id": "banners-note",
-                    "value": "<div style='background-color:#f5f5f5;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#333;font-size:14px;line-height:1.6;direction:inherit;text-align:inherit;'><strong style='color:#e53e3e;'>تنبيه:</strong> يتم اقتصاص الصور من الأطراف لتناسب مقاسات الشاشات، لذا يُرجى مراعاة الأجزاء المقتصّة طولاً وعرضاً عند التصميم لتظهر الصورة كاملة قدر الإمكان.</div>"
+                    "value": "<div ><strong >تنبيه:</strong> يتم اقتصاص الصور من الأطراف لتناسب مقاسات الشاشات، لذا يُرجى مراعاة الأجزاء المقتصّة طولاً وعرضاً عند التصميم لتظهر الصورة كاملة قدر الإمكان.</div>"
                 },
                 {
                     "id": "banners",
@@ -823,7 +822,7 @@
                             "icon": "sicon-link",
                             "label": "الرابط",
                             "id": "banners.url",
-                            "value": null,
+                            "value": [],
                             "description": null,
                             "required": false,
                             "format": "variable-list",
@@ -880,7 +879,8 @@
                                     "key": "custom",
                                     "value": "custom"
                                 }
-                            ]
+                            ],
+                            "multichoice": true
                         },
                         {
                             "type": "string",
@@ -911,7 +911,8 @@
                             "minLength": 0,
                             "maxLength": 255
                         }
-                    ]
+                    ],
+                    "public": true
                 }
             ]
         },
