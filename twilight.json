@@ -1106,25 +1106,17 @@
             "path": "home.enhanced-slidercopy",
             "fields": [
                 {
-                    "id": "title",
-                    "type": "static",
-                    "format": "title",
-                    "label": "Title",
-                    "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-text"
-                },
-                {
-                    "id": "image",
+                    "id": "image_0000",
                     "type": "string",
                     "format": "image",
-                    "label": "Image",
+                    "label": "Image_1111",
                     "description": "يمكن",
                     "labelHTML": "اضف صوره",
                     "placeholder": "e.g. https://hostname.com/image.png",
                     "icon": "sicon-image",
                     "value": null,
-                    "required": true
+                    "required": true,
+                    "public": true
                 },
                 {
                     "id": "icon_picker",
@@ -1135,7 +1127,8 @@
                     "labelHTML": null,
                     "icon": "sicon-user-circle",
                     "value": "sicon-store",
-                    "required": false
+                    "required": false,
+                    "public": true
                 },
                 {
                     "id": "time",
@@ -1147,7 +1140,8 @@
                     "labelHTML": "تجريبي اتش ام ال",
                     "icon": "sicon-time",
                     "value": "01:00",
-                    "required": false
+                    "required": false,
+                    "public": true
                 }
             ]
         }
